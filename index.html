@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>FCC Technical Documentation Page</title>
+    <link href="style.css" rel="stylesheet" type="text/css" />
+  </head>
+  <body>
+    <nav id="navbar">
+      <header>Cascading Style Sheets</header>
+      <a href="#what_is_css" class="nav-link">What is CSS</a>
+      <a href="#writing_css" class="nav-link">Writing CSS</a>
+      <a href="#add_css_to_html" class="nav-link">Add CSS to HTML</a>
+      <a href="#styling_text" class="nav-link">Styling Text</a>
+      <a href="#flexbox_layout" class="nav-link">Flexbox Layout</a>
+      <a href="#grid_layout" class="nav-link">Grid Layout</a>
+      <a href="#resources" class="nav-link">Resources</a>
+    </nav>
+    
+    <main id="main-doc">
+      <section id="what_is_css" class="main-section">
+        <header>What is CSS</header>
+        <p>Cascading Style Sheets (CSS) is a stylesheet language used to describe the presentation of a document written in HTML or XML (including XML dialects such as SVG, MathML or XHTML). CSS describes how elements should be rendered on screen, on paper, in speech, or on other media.</p>
+
+<p>CSS is one of the core languages of the open Web and is standardized across Web browsers according to the W3C specification. Previously development of various parts of CSS specification was done synchroniously, which allowed versioning of the latest recommendation. You might have heard about CSS1, CSS2.1, CSS3. However, CSS4 has never become an official version.</p>
+
+<p>From CSS3, the scope of the specification increased significantly and the progress on different CSS modules started to differ so much, that it became more effective to develop and release recommendations seperately per module. Instead of versioning the CSS specification, W3C now periodically takes a snapshot of the latest stable state of CSS specification.</p>
+      </section>
+      
+      <section id="writing_css" class="main-section">
+        <header>Writing CSS</header>
+        <p>The basic goal of the Cascading Stylesheet (CSS) language is to allow a browser engine to paint elements of the page with specific features, like colors, positioning, or decorations. The CSS syntax reflects this goal and its basic building blocks are:</p>
+        <ul>
+          <li>The <strong>property</strong> which is an identifier, that is a human-readable name, that defines which feature is considered.</li>
+          <li>The <strong>value</strong> which describe how the feature must be handled by the engine. Each property has a set of valid values, defined by a formal grammar, as well as a semantic meaning, implemented by the browser engine.</li>
+        </ul>
+        <h4>CSS Declarations</h4>
+        <p>Setting CSS properties to specific values is the core function of the CSS language. A property and value pair is called a declaration, and any CSS engine calculates which declarations apply to every single element of a page in order to appropriately lay it out, and to style it.</p>
+
+        <p>Both properties and values are case-insensitive by default in CSS. The pair is separated by a colon, ':' and white spaces before, between, and after properties and values, but not necessarily inside, are ignored.</p>
+        
+        <p>An example is shown in the figure below:</p>
+        
+        <code>background-color: white;</code>
+        
+        <p>There are more than 100 different properties in CSS and a nearly infinite number of different values. Not all pairs of properties and values are allowed and each property defines what are the valid values. When a value is not valid for a given property, the declaration is deemed invalid and is wholly ignored by the CSS engine.</p>
+        
+        <p>Declarations are grouped in blocks, that is in a structure delimited by an opening brace, '{' and a closing one, '}'. Blocks sometimes can be nested, so opening and closing braces must be matched.</p>
+        
+          <p>Such blocks are naturally called declaration blocks and declarations inside them are separated by a semi-colon, ';'. A declaration block may be empty, that is containing null declaration. White spaces around declarations are ignored. The last declaration of a block doesn't need to be terminated by a semi-colon, though it is often considered good style to do it as it prevents forgetting to add it when extending the block with another declaration.</p>
+
+<p>A CSS declaration block is visualized in the diagram below.</p>
+        <pre><code>   {
+background-color: white;
+border-radius: 10px;
+}</code></pre>
+        
+        <h4>CSS Rulesets</h4>
+        
+        <p>If style sheets could only apply a declaration to each element of a Web page, they would be pretty useless. The real goal is to apply different declarations to different parts of the document.</p>
+
+<p>CSS allows this by associating conditions with declarations blocks. Each (valid) declaration block is preceded by one or more comma-separated selectors, which are conditions selecting some elements of the page. A selector group and an associated declarations block, together, are called a ruleset, or often simply a rule.</p>
+
+        <p>A CSS ruleset (or rule) is visualized in the diagram below.</p>
+<pre><code>header, p.intro {
+  background-color: white;
+  border-radius: 10px;
+}</code></pre>
+
+        <p>As an element of the page may be matched by several selectors, and therefore by several rules potentially containing a given property several times, with different values, the CSS standard defines which one has precedence over the other and must be applied: this is called the cascade algorithm.</p>
+        
+      </section>
+      
+      <section id="add_css_to_html" class="main-section">
+        <header>Add CSS to HTML</header>
+        <p>HTML can be styled using CSS in three ways:</p>
+        <ul>
+          <li>In-line styling</li>
+          <li>Style blocks</li>
+          <li>Stylesheets</li>
+        </ul>
+        <p>Inline styling is accomplished by adding a style atttribute directly to the element in the HTML file. An example is shown below:</p>
+        <code>&#60;p style="color: green;"&#62;I'm green&#60;/p&#62;</code>
+        
+        <p>Rather than adding styles at each element it is more efficient and easier to read HTML if the CSS styles are grouped together. This can be done by creating a CSS style block at the top of the HTML document. By adding all the CSS rules at the top of the document and wrapping them in &#60;style&#62;...&#60;/style&#62; elements the HTML itself is much more readable and styling is easier to find and adjust as needed.</p>
+        
+        <p>Stylesheets are an extension of the Style Blocks approach. In the case of Stylesheets, however, the CSS is written in a seperate document from the HTML. This allows for even cleaner looking HTML documents and opens up new possibilities, such as importing outside styles to your HTML. The CSS rules in the CSS document can be applied to the HTML by linking your HTML to your CSS document. An example of this is shown below:</p>
+        
+        <code>&#60;link rel="stylesheet" type="text/css" href="stylesheet.css"&#62;</code>
+        
+        <p>This link is placed in the Head section of your HTML.</p>
+      </section>
+      
+      <section id="styling_text" class="main-section">
+        <header>Styling Text</header>
+        <p>Styling text is one of the main uses of CSS. There are many different properties and even more values that can be used to change up your text. Some of the main things that can be adjusted are: </p>
+        <ul>
+          <li>font-face</li>
+          <li>font-size</li>
+          <li>font-weight</li>
+          <li>font-style</li>
+          <li>line-height</li>
+          <li>text-decoration</li>
+          <li>color</li>
+        </ul>
+        <p>The huge variety of ways these properties and others can be adjusted is outside of the scope of this document, but if you would like to look further into styling text visit some of the other <a href="#resources">resources</a> related to CSS.</p>
+      </section>
+      
+      <section id="flexbox_layout" class="main-section">
+        <header>Flexbox Layout</header>
+        <p>CSS Flexible Box Layout is a module of CSS that defines a CSS box model optimized for user interface design, and the layout of items in one dimension. In the flex layout model, the children of a flex container can be laid out in any direction, and can “flex” their sizes, either growing to fill unused space or shrinking to avoid overflowing the parent. Both horizontal and vertical alignment of the children can be easily manipulated.</p>
+        <p>See some of the Flexbox <a href="#resources">resources</a> below for more in depth information</p>
+      </section>
+      
+      <section id="grid_layout" class="main-section">
+        <header>Grid Layout</header>
+        <p>CSS Grid Layout excels at dividing a page into major regions or defining the relationship in terms of size, position, and layer, between parts of a control built from HTML primitives.
+
+Like tables, grid layout enables an author to align elements into columns and rows. However, many more layouts are either possible or easier with CSS grid than they were with tables. For example, a grid container's child elements could position themselves so they actually overlap and layer, similar to CSS positioned elements.</p>
+        <p>See some of the Grid Layout <a href="#resources">resources</a> below for more in depth information</p>
+      </section>
+      
+       <section id="resources" class="main-section">
+        <header>Resources</header>
+         <p>Much of this text was taken from Mozilla's <a href="https://developer.mozilla.org/en-US/">MDN Webdocs</a>, a great resource for web developers.</p>
+          <p>Check out these other great resources for learning more about CSS:</p>
+         <ul>
+           <li><a href="https://css-tricks.com/">CSS Tricks</a> is a valuable resource for articles and how-to's relating to any CSS topic you can think of.</li>
+           <li><a href="https://www.w3schools.com/css/">w3schools</a> has a deep pool of CSS tutorials with plenty of examples and links to codepens to try things out as you learn them.</li>
+           <li><a href="freecodecamp.org">freeCodeCamp</a> is one of the best sources for all things coding on the web, including in-depth articles, tutorials, and a full curriculum on CSS.</li>
+         </ul>
+      </section>
+      
+    </main>
+  </body>
+</html>

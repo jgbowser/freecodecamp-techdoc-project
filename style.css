@@ -1,0 +1,88 @@
+/* Global Styling */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,700;1,400&display=swap');
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  display: flex;
+  font-family: "Montserrat", sans-serif;
+  font-size: 16px;
+}
+
+code {
+  display: block;
+  background-color: #BDBDBD;
+  padding: 15px 35px;
+  border-left: 6px solid #0091EA;
+  margin: 20px 0px 20px 25px;
+}
+
+p, li {
+  font-size: .9rem;
+  line-height: 1.6;
+}
+
+main {
+  height: 100vh;
+  overflow-y: scroll;
+  flex: 1;
+  padding: 15px;
+}
+
+h4 {
+  padding-left: 10px;
+}
+
+header {
+  font-weight: 700;
+  font-size: 1.75rem;
+}
+
+/* Nav Styling */
+
+#navbar {
+  background-color: #eee;
+  width: 250px;
+  height: 100vh;
+  border-right: 2px solid #aaa
+}
+
+.nav-link {
+  display: block;
+  text-decoration: none;
+  color: black;
+  padding: 15px;
+  border-top: 2px solid #aaa
+}
+
+nav header {
+  text-align: center;
+  margin-top: 15px;
+  padding-bottom: 7.5px;
+}
+
+/* Media */
+
+@media only screen and (max-width: 700px) {
+ 
+  body {
+    margin-top: 210px;
+  }
+  
+  #navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    width: 100vw;
+    height:210px;
+    overflow-y: scroll;
+    box-shadow: 0 2px 20px rgba(0, 0, 0, 0.2)
+      
+    
+  }
+    
+}
